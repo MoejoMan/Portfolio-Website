@@ -1,29 +1,48 @@
 body {
     font-family: Arial, sans-serif;
     
-    background: linear-gradient(135deg, #1a001f, #3a0040, #4b0082, #6f00a1, #9300d3, #c700ff);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
+    background: linear-gradient(135deg, 
+        #1a001f,  /* Dark Purple */
+        #2a0030,  /* Darker Purple */
+        #3a0040,  /* Slightly Lighter Purple */
+        #4b0082,  /* Medium Purple */
+        #5c009e,  /* Lighter Purple */
+        #3a0050,  /* Darker Blue-Purple */
+        #1c0056,  /* Deeper Blue-Purple */
+        #000040,  /* Dark Blue */
+        #1a001f   /* Back to Dark Purple */
+    );
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
+    
+    
+    background-size: 200% 200%;
+    animation: gradientAnimation 35s ease infinite;
+    
     margin: 0;
     padding: 0;
     color: #e0e0e0; 
 }
 
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; } /* Midway transition */
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; } /* Return to midway */
+    100% { background-position: 0% 50%; }
+    
+}
+
 header {
-    background-color: rgba(48, 26, 76, 0.8); 
-    color: #f7d4e7; 
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ffffff; 
     padding: 20px;
     text-align: center;
-    text-shadow: 0 0 10px #f7d4e7, 0 0 20px #ff758f; 
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff; 
 }
 
 header h1 {
     margin: 0;
+    font-size: 40px;
 }
 
 nav ul {
@@ -37,9 +56,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ff758f; 
+    color: #ffffff; 
     text-decoration: none;
-    text-shadow: 0 0 5px #ff758f, 0 0 10px #ff758f; 
+    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7; 
 }
 
 nav ul li a:hover {
@@ -49,7 +68,7 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
-    background: rgba(75, 44, 97, 0.9); 
+    background: rgba(0, 0, 0, 0.3); 
     margin: 20px auto;
     max-width: 800px;
     border-radius: 8px;
@@ -60,7 +79,7 @@ main {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: rgba(48, 26, 76, 0.8); 
+    background-color: transparent;
     color: #f7d4e7; 
     position: fixed;
     width: 100%;
