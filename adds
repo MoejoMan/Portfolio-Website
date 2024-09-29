@@ -1,0 +1,47 @@
+[33mcommit fff5a265852bab0dbe362babafe37b55112804c8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sun Sep 29 16:51:08 2024 +0000
+
+    added_colours
+
+[33mcommit 097b826fe0fb9dc4dc9f8d484768bb31e10fbfae[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sun Sep 29 15:55:03 2024 +0000
+
+    test
+
+[33mcommit 801c076c7cbc8a7ade6aeddd284c6eee7de0926d[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 23:42:31 2024 +0000
+
+    test
+
+[33mcommit a6970e8078842d541adabc9a9065fe45b424452b[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 23:25:51 2024 +0000
+
+    test
+
+[33mcommit a47077b1131ddc6979097af3557cf55ff553afc4[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 23:10:28 2024 +0000
+
+    Replaced dummy comments with some in-memory storage
+
+[33mcommit 2c2ad1b3fa719433540b95f8bb463e2c0e0a00b0[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 23:03:46 2024 +0000
+
+    Made the site prettier.
+
+[33mcommit f2e5f1c78507aa6de469d70e4a4831be72e5cfc6[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 22:58:31 2024 +0000
+
+    A first cut at the template
+
+[33mcommit 9af58b4b4fdaf2bbd9a9f8ab3776bfc8c8f3e3f3[m
+Author: MoejoeMan <joehayes006@gmail.com>
+Date:   Sat Sep 28 22:44:43 2024 +0000
+
+    First commit of a really simple web app, with a .gitignore file
