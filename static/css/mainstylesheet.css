@@ -1,26 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
-    
-    background: linear-gradient(135deg, 
-        #1a001f,  /* Dark Purple */
-        #2a0030,  /* Darker Purple */
-        #3a0040,  /* Slightly Lighter Purple */
-        #4b0082,  /* Medium Purple */
-        #5c009e,  /* Lighter Purple */
-        #3a0050,  /* Darker Blue-Purple */
-        #1c0056,  /* Deeper Blue-Purple */
-        #000040,  /* Dark Blue */
-        #1a001f   /* Back to Dark Purple */
-    );
+    margin-top: 4em; padding: 5em; color: #ffffff; font-family: 'Anonymous Pro', monospace;background-color: #673ab7;
 
-    
-    
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(89.7deg, rgb(0, 32, 95) 2.8%, rgb(132, 53, 142) 97.8%);
+
     background-size: 200% 200%;
-    animation: gradientAnimation 35s ease infinite;
-    
+    animation: gradientAnimation 15s ease infinite;
+
     margin: 0;
     padding: 0;
-    color: #e0e0e0; 
+    color: #e0e0e0;
 }
 
 @keyframes gradientAnimation {
@@ -29,15 +19,15 @@ body {
     50% { background-position: 100% 50%; }
     75% { background-position: 50% 50%; } /* Return to midway */
     100% { background-position: 0% 50%; }
-    
+
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.2);
-    color: #ffffff; 
+    color: #ffffff;
     padding: 20px;
     text-align: center;
-    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff; 
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
 }
 
 header h1 {
@@ -56,33 +46,90 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; 
+    color: #ffffff;
     text-decoration: none;
-    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7; 
+    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7;
 }
 
 nav ul li a:hover {
-    color: #9b59b6; 
-    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6; 
+    color: #9b59b6;
+    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
 }
 
 main {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.3);
     margin: 20px auto;
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     color: #e0e0e0;
+    font-size: 20px;
+    padding-bottom: 80px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    min-height: calc(100vh - 100px);
+    padding-bottom: 100px;
+    box-sizing:
+}
+
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Cursor */
+.cursor{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+.typewriter-animation {
+  animation:
+    typewriter 5s steps(50) 1s 1 normal both,
+    blinkingCursor 500ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+textarea {
+    height: 150px; /* Adjust height as needed */
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: transparent;
-    color: #f7d4e7; 
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    text-shadow: 0 0 10px #f7d4e7, 0 0 20px #ff758f; 
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
