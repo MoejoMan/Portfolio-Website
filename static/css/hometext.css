@@ -1,42 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 body {
-    margin-top: 4em; 
-    padding: 5em; 
-    color: #ffffff; 
-    font-family: Arial, sans-serif; 
+    margin-top: 4em;
+    padding: 5em;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
     background-color: #673ab7;
 
     background: linear-gradient(89.7deg, rgb(0, 32, 95) 2.8%, rgb(132, 53, 142) 97.8%);
 
     background-size: 200% 200%;
-    animation: gradientAnimation 35s ease infinite;
-    
+    animation: gradientAnimation 15s ease infinite;
+
     margin: 0;
     padding: 0;
-    color: #e0e0e0; 
+    color: #e0e0e0;
 }
 
 .cursor {
-    font-family: 'Inconsolata', monospace; /* Apply Inconsolata to the cursor class */
+    font-family: 'Inconsolata', monospace;
 }
 
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
-    25% { background-position: 50% 50%; } /* Midway transition */
+    25% { background-position: 50% 50%; }
     50% { background-position: 100% 50%; }
-    75% { background-position: 50% 50%; } /* Return to midway */
+    75% { background-position: 50% 50%; }
     100% { background-position: 0% 50%; }
-    
+
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.2);
-    color: #ffffff; 
+    color: #ffffff;
     padding: 20px;
     text-align: center;
-    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff; 
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
 }
 
 header h1 {
@@ -55,19 +55,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; 
+    color: #ffffff;
     text-decoration: none;
-    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7; 
+    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7;
 }
 
 nav ul li a:hover {
-    color: #9b59b6; 
-    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6; 
+    color: #9b59b6;
+    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
 }
 
 main {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.3);
     margin: 20px auto;
     max-width: 800px;
     border-radius: 8px;
@@ -82,15 +82,13 @@ html, body {
 }
 
 .content {
-    min-height: calc(100vh - 100px); 
-    padding-bottom: 100px; 
-    box-sizing: 
+    min-height: calc(100vh - 100px);
+    padding-bottom: 100px;
+    box-sizing:
 }
 
-/* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-/* Cursor */
 .cursor{
     position: relative;
     width: 24em;
@@ -100,10 +98,10 @@ html, body {
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    transform: translateY(-50%);    
+    transform: translateY(-50%);
 }
 .typewriter-animation {
-  animation: 
+  animation:
     typewriter 5s steps(50) 1s 1 normal both,
     blinkingCursor 500ms steps(50) infinite normal;
 }
@@ -119,32 +117,34 @@ html, body {
 
 .timeline {
     position: relative;
-    max-width: 1000px; /* This controls the overall width */
-    margin: 100px auto; /* Centers the timeline */
-    padding: 0 20px; /* Optional: Add some padding for better spacing */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center items horizontally */
-    flex-direction: column; /* Arrange items in a column */
+    max-width: 1000px;
+    margin: 1px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+
 }
 
 
 .container {
-    padding: 10px 50px;
+    padding: 10px 0px;
     position: relative;
-    width: 50%; /* Keep this for layout */
+    width: 50%;
     animation: movedown 1s linear forwards;
     opacity: 0;
-    display: flex; /* Use flexbox for inner items */
-    justify-content: center; /* Center inner items */
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes movedown {
     0% {
-        opacity: 0; /* Start invisible */
+        opacity: 0;
         transform: translateY(-30px);
     }
     100% {
-        opacity: 1; /* Fade in */
+        opacity: 1;
         transform: translateY(0);
     }
 }
@@ -172,7 +172,7 @@ html, body {
     position: relative;
     border-radius: 6px;
     font-size: 15px;
-    color: #000; 
+    color: #000;
 }
 .left-container{
     left: 0;
@@ -185,12 +185,12 @@ html, body {
 .timeline::after {
     content: '';
     position: absolute;
-    width: 6px; /* Adjust if needed */
+    width: 6px;
     height: 100%;
     background: #fff;
     top: 0;
-    left: 50%; /* Center the line */
-    margin-left: -3px; /* Adjust for half of its width */
+    left: 50%;
+    margin-left: -3px;
     z-index: -1;
     animation: moveline 6s linear forwards;
 }
@@ -214,7 +214,6 @@ html, body {
     margin-bottom: 15px;
 }
 
-/* Arrow adjustments */
 .left-container-arrow {
     height: 0;
     width: 0;
@@ -240,7 +239,7 @@ html, body {
 }
 
 @media screen and (max-width: 600px){
-    
+
     .timeline{
         margin: 50px auto;
     }
@@ -274,7 +273,7 @@ footer {
   color: white;
   text-align: center;
   padding: 10px 0;
-  position: fixed; 
-  bottom: 0; 
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }

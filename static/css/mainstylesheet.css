@@ -15,9 +15,9 @@ body {
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
-    25% { background-position: 50% 50%; } /* Midway transition */
+    25% { background-position: 50% 50%; }
     50% { background-position: 100% 50%; }
-    75% { background-position: 50% 50%; } /* Return to midway */
+    75% { background-position: 50% 50%; }
     100% { background-position: 0% 50%; }
 
 }
@@ -79,10 +79,8 @@ html, body {
     box-sizing:
 }
 
-/* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
-/* Cursor */
 .cursor{
     position: relative;
     width: 24em;
@@ -117,11 +115,11 @@ textarea {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
+    box-sizing: border-box;
 }
 
 textarea {
-    height: 150px; /* Adjust height as needed */
+    height: 150px;
 }
 
 footer {
