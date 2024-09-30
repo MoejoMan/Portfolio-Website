@@ -117,6 +117,158 @@ html, body {
   to { border-right-color: transparent; }
 }
 
+.timeline {
+    position: relative;
+    max-width: 1000px; /* This controls the overall width */
+    margin: 100px auto; /* Centers the timeline */
+    padding: 0 20px; /* Optional: Add some padding for better spacing */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Arrange items in a column */
+}
+
+
+.container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%; /* Keep this for layout */
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+    display: flex; /* Use flexbox for inner items */
+    justify-content: center; /* Center inner items */
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1; /* Fade in */
+        transform: translateY(0);
+    }
+}
+
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+
+.text-box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #000; 
+}
+.left-container{
+    left: 0;
+}
+
+.right-container{
+    left: 50%;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px; /* Adjust if needed */
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%; /* Center the line */
+    margin-left: -3px; /* Adjust for half of its width */
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.text-box h2{
+    font-weight: 600;
+}
+
+.text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Arrow adjustments */
+.left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -15px;
+}
+
+@media screen and (max-width: 600px){
+    
+    .timeline{
+        margin: 50px auto;
+    }
+    .timeline::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box{
+        font-size: 13px;
+    }
+    .text-box small{
+        margin-bottom: 10px;
+    }
+    .right-container{
+        left: 0;
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
+    }
+}
+
+
 footer {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
