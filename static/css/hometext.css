@@ -238,17 +238,16 @@ html, body {
     left: -15px;
 }
 
-@media screen and (max-width: 600px){
-
-    .timeline{
-        margin: 50px auto;
+@media screen and (max-width: 600px) {
+    footer .center {
+        display: none !important;
     }
     .timeline::after{
         left: 31px;
     }
     .container{
         width: 100%;
-        padding-left: 80px;
+        padding-left: 10px;
         padding-right: 25px;
     }
     .text-box{
@@ -265,15 +264,43 @@ html, body {
         border-left: 0;
         left: -15px;
     }
+
+    /* Mobile footer styles */
+    footer {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer .center {
+        display: none;
+    }
 }
+
 
 
 footer {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  text-align: center;
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+footer .left {
+  flex: 1;
+  text-align: left;
+}
+
+footer .center {
+  flex: 0.37;
+  text-align: center;
 }

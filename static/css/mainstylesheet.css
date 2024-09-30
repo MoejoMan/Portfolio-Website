@@ -122,12 +122,66 @@ textarea {
     height: 150px;
 }
 
+@media screen and (max-width: 600px) {
+    footer .center {
+        display: none !important;
+    }
+    .timeline::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 25px;
+    }
+    .text-box{
+        font-size: 13px;
+    }
+    .text-box small{
+        margin-bottom: 10px;
+    }
+    .right-container{
+        left: 0;
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer .center {
+        display: none;
+    }
+}
+
 footer {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  text-align: center;
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+footer .left {
+  flex: 1;
+  text-align: left;
+}
+
+footer .center {
+  flex: 0.37;
+  text-align: center;
 }
