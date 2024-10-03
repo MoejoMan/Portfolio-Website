@@ -122,6 +122,24 @@ textarea {
     height: 150px;
 }
 
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9b59b6;
+}
+
 @media screen and (max-width: 600px) {
     footer .center {
         display: none !important;
@@ -147,6 +165,24 @@ textarea {
         border-right: 15px solid #fff;
         border-left: 0;
         left: -15px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #9b59b6;
     }
 
     footer {

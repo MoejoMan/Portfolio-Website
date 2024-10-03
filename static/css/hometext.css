@@ -166,6 +166,10 @@ html, body {
     animation-delay: 3s;
 }
 
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+
 .text-box {
     padding: 20px 30px;
     background: #fff;
