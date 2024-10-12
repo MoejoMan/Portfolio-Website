@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/hometext.css') }}">
+<script src="mysite/static/JavaScript/background.js"></script>
 
 
     <title>Homepage | Portfolio | Joseph Hayes Gonzalez</title>
@@ -23,7 +24,13 @@
     </header>
     <main>
 
-        <p class="cursor typewriter-animation">cursor.execute('SELECT * FROM portfolio WHERE id=1;')</p>
+        <p class="cursor typewriter-animation desktop-text">
+            cursor.execute('SELECT * FROM portfolio WHERE id=1;')
+        </p>
+        <p class="cursor typewriter-animation mobile-text">
+            SELECT * FROM portfolio;
+        </p>
+
 
         <p>Welcome to My Portfolio! I'm Joseph Hayes Gonzalez, a Cybersecurity student at university. Here, you'll find a showcase of my notable achievements and projects that reflect my passion and dedication in the field.</p>
     </main>

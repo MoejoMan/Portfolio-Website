@@ -19,8 +19,9 @@ body {
 
 .cursor {
     font-family: 'Inconsolata', monospace;
+    word-wrap: break-word;
+    white-space: normal;
 }
-
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
@@ -242,6 +243,14 @@ html, body {
     left: -15px;
 }
 
+.mobile-text {
+    display: none;
+}
+
+.desktop-text {
+    display: block;
+}
+
 @media screen and (max-width: 600px) {
     footer .center {
         display: none !important;
@@ -269,7 +278,19 @@ html, body {
         left: -15px;
     }
 
-    /* Mobile footer styles */
+    .cursor {
+    font-size: 0.85em;
+    }
+
+    .desktop-text {
+    display: none;
+    }
+
+    .mobile-text {
+        display: block;
+    }
+}
+
     footer {
         background-color: rgba(0, 0, 0, 0.3);
         color: white;
