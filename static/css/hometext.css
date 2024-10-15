@@ -92,7 +92,6 @@ html, body {
 
 .cursor{
     position: relative;
-    width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
     font-size: 30px;
@@ -100,6 +99,7 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     transform: translateY(-50%);
+    display: inline-block;
 }
 .typewriter-animation {
   animation:
@@ -279,7 +279,22 @@ html, body {
     }
 
     .cursor {
-    font-size: 0.85em;
+        position: relative;
+        margin: 0 auto;
+        border-right: 2px solid rgba(255,255,255,.75);
+        font-size: 0.85em;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);
+        display: inline-block;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    @keyframes typewriter-mobile {
+        from { width: 0; }
+        to { width: 80%; }
     }
 
     .desktop-text {

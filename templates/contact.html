@@ -25,7 +25,7 @@
     </header>
     <main>
         <h2>Get in Touch</h2>
-        <form action="#" method="POST">
+        <form action="/contact" method="POST">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br>
             <label for="email">Email:</label><br>
@@ -34,6 +34,18 @@
             <textarea id="message" name="message" required></textarea><br>
             <input type="submit" value="Send">
         </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul>
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+
 
         <div class="social-icons">
             <a href="https://github.com/MoejoMan?tab=repositories" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
