@@ -13,6 +13,10 @@ body {
     color: #e0e0e0;
 }
 
+body#animatedBody {
+    animation: gradientAnimation 15s infinite linear;
+}
+
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     25% { background-position: 50% 50%; }

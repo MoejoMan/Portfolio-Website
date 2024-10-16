@@ -11,7 +11,7 @@
 
     <title>Contact | Portfolio | Joseph Hayes Gonzalez</title>
 </head>
-<body>
+<body id="animatedBody">
     <header>
         <h1>Contact Me</h1>
         <nav>
@@ -56,6 +56,24 @@
         </div>
 
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let startTime = localStorage.getItem('gradientStartTime');
+
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem('gradientStartTime', startTime);
+            }
+
+            const elapsedTime = (Date.now() - startTime) / 1000;
+
+            const body = document.getElementById('animatedBody');
+            if (body) {
+                body.style.animationDelay = `-${elapsedTime % 15}s`;
+            }
+        });
+    </script>
 
 <footer>
   <div class="left">

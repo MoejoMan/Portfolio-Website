@@ -10,7 +10,7 @@
 
     <title>Homepage | Portfolio | Joseph Hayes Gonzalez</title>
 </head>
-<body>
+<body id="animatedBody">
     <header>
         <h1>Welcome to My Portfolio</h1>
         <nav>
@@ -81,6 +81,24 @@
             <div class="left-container-arrow"></div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let startTime = localStorage.getItem('gradientStartTime');
+
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem('gradientStartTime', startTime);
+            }
+
+            const elapsedTime = (Date.now() - startTime) / 1000;
+
+            const body = document.getElementById('animatedBody');
+            if (body) {
+                body.style.animationDelay = `-${elapsedTime % 15}s`;
+            }
+        });
+    </script>
 
 
 <footer>

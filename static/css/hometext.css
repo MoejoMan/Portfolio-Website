@@ -23,6 +23,10 @@ body {
     white-space: normal;
 }
 
+body#animatedBody {
+    animation: gradientAnimation 15s infinite linear;
+}
+
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     25% { background-position: 50% 50%; }

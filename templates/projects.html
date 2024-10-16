@@ -5,10 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
+<script src="mysite/static/JavaScript/background.js"></script>
+
 
     <title>Projects | Portfolio | Joseph Hayes Gonzalez</title>
 </head>
-<body>
+<body id="animatedBody">
     <header>
         <h1>My Projects</h1>
         <nav>
@@ -24,6 +26,24 @@
         <h2>Project Showcase</h2>
         <p>Here are the projects I have done throughout my time at Sixth form all the way to the current day at University. Here is a quick link to my github however you can find my other profiles which contain more information on the "Contact Me" page. <br> Here is my github: <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">https://github.com/MoejoMan</a></p>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let startTime = localStorage.getItem('gradientStartTime');
+
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem('gradientStartTime', startTime);
+            }
+
+            const elapsedTime = (Date.now() - startTime) / 1000;
+
+            const body = document.getElementById('animatedBody');
+            if (body) {
+                body.style.animationDelay = `-${elapsedTime % 15}s`;
+            }
+        });
+    </script>
 
 <footer>
   <div class="left">

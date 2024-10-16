@@ -5,10 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
+<script src="mysite/static/JavaScript/background.js"></script>
+
 
     <title>About Me | Portfolio | Joseph Hayes Gonzalez</title>
 </head>
-<body>
+<body id="animatedBody">
     <header>
         <h1>About Me</h1>
         <nav>
@@ -28,6 +30,24 @@ I’m constantly working on projects that push my skills forward, and I enjoy fi
 
 </p>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let startTime = localStorage.getItem('gradientStartTime');
+
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem('gradientStartTime', startTime);
+            }
+
+            const elapsedTime = (Date.now() - startTime) / 1000;
+
+            const body = document.getElementById('animatedBody');
+            if (body) {
+                body.style.animationDelay = `-${elapsedTime % 15}s`;
+            }
+        });
+    </script>
 
 <footer>
   <div class="left">
