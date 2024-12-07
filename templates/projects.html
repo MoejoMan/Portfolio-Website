@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
-<script src="mysite/static/JavaScript/background.js"></script>
+<script src="{{ url_for('static', filename='JavaScript/background.js') }}"></script>
 
 
 
@@ -23,9 +23,9 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="projectsPage">
         <h2>Project Showcase</h2>
-        <p>Here are the projects I have done throughout my time at Sixth form all the way to the current day at University. Here is a quick link to my github however you can find my other profiles which contain more information on the "Contact Me" page. <br> Here is my github: <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">https://github.com/MoejoMan</a></p>
+        <p>Here are the projects I have done throughout my time at Sixth form all the way to the current day at University. Here is a quick link to my github however you can find my other profiles which contain more information on the "Contact Me" page. <br> Here is my github (will soon update to show all of my projects): <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">https://github.com/MoejoMan</a></p>
     </main>
 
     <script>
@@ -46,6 +46,48 @@
         });
     </script>
 
+    <section class="project-grid">
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/NEA.png') }}" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>My Point of Sales system I made for my Non-Exam Assessment</p>
+            <a href="https://github.com/MoejoMan/Nea-PosSystem" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/ICT Coursework.png') }}" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>My dummy Website I made for my ICT Coursework</p>
+            <a href="https://github.com/MoejoMan/ICT-Coursework-Website" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/UtilitySuite.png') }}" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>A simplistic PyQt5 powered Utility suite</p>
+            <a href="https://github.com/MoejoMan/Simple-PyQt5-Utility-Suite" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/Coming Soon.png') }}" alt="Project 4">
+            <div class="wip-overlay">WIP</div>
+            <h3>Project 4</h3>
+            <p>Work in Progress: Stay tuned for updates as this project evolves.</p>
+            <a href="#" class="project-link">Coming Soon</a>
+        </div>
+
+        <div class="project-card">
+
+        </div>
+
+        <div class="project-card">
+
+        </div>
+
+
+
+
+
 <footer>
   <div class="left">
     <p>Email: joehayes006@gmail.com</p>
@@ -54,6 +96,21 @@
     <p>Thanks for Checking out my Portfolio!</p>
   </div>
 </footer>
+
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                if (!card.innerHTML.trim()) {
+                    card.classList.add('empty'); // Add 'empty' class if the card is empty
+                } else {
+                    card.classList.remove('empty'); // Remove 'empty' class if there's content
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

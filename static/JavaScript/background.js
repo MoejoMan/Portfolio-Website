@@ -9,5 +9,5 @@
     const elapsedTime = (Date.now() - startTime) / 1000;
 
     const body = document.getElementById('animatedBody');
-    body.style.animationDelay = `-${elapsedTime % 15}s`;  
+    body.style.animationDelay = `-${elapsedTime % 15}s`;
 </script>

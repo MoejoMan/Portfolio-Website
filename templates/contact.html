@@ -6,11 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
-<script src="mysite/static/JavaScript/background.js"></script>
+<script src="{{ url_for('static', filename='JavaScript/background.js') }}"></script>
 
-
-
-    <title>Contact | Portfolio | Joseph Hayes Gonzalez</title>
+<title>Contact | Portfolio | Joseph Hayes Gonzalez</title>
 </head>
 <body id="animatedBody">
     <header>
@@ -24,32 +22,21 @@
             </ul>
         </nav>
     </header>
-        <main class="contact maincontact"
-            <h2>Get in Touch</h2>
-            <form action="/contact" method="POST">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" required></textarea><br>
-                <input type="submit" value="Send">
-            </form>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    <ul>
-                        {% for category, message in messages %}
-                            <li class="{{ category }}">{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
-            <div class="social-icons">
-                <a href="https://github.com/MoejoMan?tab=repositories" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/joehg.py/profilecard/?igsh=aHduOHZ6d2UycDg0" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/joseph-hayes-gonzalez-cybersecurity/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </main>
+
+    <main class="contact maincontact">
+
+        <h2>Get in Touch</h2>
+        <p>If you'd like to reach out to me, feel free to contact me through my social media profiles or send me an email at <a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a>.</p>
+    
+    </main>
+
+
+        <div class="social-icons">
+            <a href="https://github.com/MoejoMan?tab=repositories" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/joehg.py/profilecard/?igsh=aHduOHZ6d2UycDg0" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/joseph-hayes-gonzalez-cybersecurity/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
