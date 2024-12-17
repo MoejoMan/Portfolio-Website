@@ -71,7 +71,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     color: #e0e0e0;
     font-size: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 }
 
 .content {
@@ -126,6 +126,41 @@ html, body {
 @keyframes blinkingCursor{
   from { border-right-color: rgba(255,255,255,.75); }
   to { border-right-color: transparent; }
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+.icon-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.icon-grid div p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.intro-section, .skills-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+    text-align: center;
 }
 
 input[type="text"],

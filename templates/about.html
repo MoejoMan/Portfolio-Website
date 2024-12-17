@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
 <script src="{{ url_for('static', filename='JavaScript/background.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js" crossorigin="anonymous"></script>
 
 
 
@@ -25,12 +26,24 @@
         </nav>
     </header>
     <main>
-        <h2>My Background</h2>
-        <p>Hey there! I’m Joseph Hayes Gonzalez, a dedicated cybersecurity student with a passion for technology, problem-solving, and learning new things. From coding in Python, using SQL for databases along with of course, HTML and CSS. To exploring the depths of network security, I thrive in environments that challenge me to think critically and innovate.
+        <section class="intro-section">
+            <h2>My Background</h2>
+            <p>
+                Hey there! I’m Joseph Hayes Gonzalez, a dedicated cybersecurity student with a passion for technology, problem-solving, and learning new things.
+                I thrive in environments that challenge me to think critically and innovate. My goal is to combine my love for tech with my cybersecurity expertise to make the digital world safer for everyone.
+            </p>
+        </section>
 
-I’m constantly working on projects that push my skills forward, and I enjoy finding creative solutions to tough problems. Outside of coding, I’m into gaming and staying updated on the latest in tech. My goal? To combine my love for tech with my cybersecurity expertise to make the digital world a safer place for everyone.
-
-</p>
+        <section class="skills-section">
+            <h2>Technologies I Work With</h2>
+            <div class="icon-grid">
+                <div><i class="fab fa-python"></i><p>Python</p></div>
+                <div><i class="fab fa-html5"></i><p>HTML</p></div>
+                <div><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+                <div><i class="fas fa-database"></i><p>SQL</p></div>
+                <div><i class="fas fa-code"></i><p>JavaScript</p></div>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -50,6 +63,19 @@ I’m constantly working on projects that push my skills forward, and I enjoy fi
             }
         });
     </script>
+
+  <script>
+    window.onload = function () {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth',
+        });
+      }, 600);
+    };
+  </script>
+
 
 <footer>
   <div class="left">

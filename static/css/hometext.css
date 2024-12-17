@@ -201,7 +201,7 @@ html, body {
     left: 50%;
     margin-left: -3px;
     z-index: -1;
-    animation: moveline 6s linear forwards;
+    animation: moveline 3s linear forwards;
 }
 
 
@@ -295,6 +295,13 @@ html, body {
         max-width: 100%;
         word-wrap: break-word;
     }
+
+@media (prefers-reduced-motion: reduce) {
+    body, .container {
+        animation: none;
+    }
+}
+
 
     @keyframes typewriter-mobile {
         from { width: 0; }
