@@ -3,7 +3,7 @@ body {
 
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(89.7deg, rgb(0, 32, 95) 2.8%, rgb(132, 53, 142) 97.8%);
+    background: linear-gradient(89.7deg, rgb(70, 70, 70) 2.8%, rgb(220, 80, 30) 97.8%);
 
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -56,6 +56,20 @@ nav ul li a {
     text-decoration: none;
     text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7;
 }
+
+a {
+    color: rgb(150, 50, 10);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(220, 80, 30);
+    text-decoration: underline;
+}
+
+
+
 
 nav ul li a:hover {
     color: #9b59b6;
@@ -232,7 +246,9 @@ textarea {
 .project-link {
     text-decoration: none;
     color: #fff;
-    background-color: #673ab7;
+    background-color: rgb(40, 40, 40);
+    color: #fff;
+    border: 1px solid rgb(220, 80, 30);
     padding: 10px 15px;
     border-radius: 5px;
     display: inline-block;
@@ -241,8 +257,11 @@ textarea {
 }
 
 .project-link:hover {
-    background-color: #452980;
+    background-color: rgb(220, 80, 30);
+    color: #fff;
+    border-color: rgb(220, 80, 30);
 }
+
 
 .project-card {
     position: relative;
