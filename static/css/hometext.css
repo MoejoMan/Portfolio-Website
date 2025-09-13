@@ -5,9 +5,9 @@ body {
     padding: 5em;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    background-color: #673ab7;
+    background-color: #f54405;
 
-    background: linear-gradient(89.7deg, rgb(70, 70, 70) 2.8%, rgb(220, 80, 30) 97.8%);
+    background: linear-gradient(89.7deg, rgb(40, 40, 40) 2.8%, rgb(173, 72, 0) 97.8%);
 
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -44,6 +44,8 @@ header {
     text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
 }
 
+}
+
 header h1 {
     margin: 0;
     font-size: 40px;
@@ -73,14 +75,18 @@ a:hover {
 
 nav ul li a {
     color: #ffffff;
-    text-decoration: none;
-    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7;
+    text-shadow: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 nav ul li a:hover {
-    color: #9b59b6;
-    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
+    color: #ffffff;
+    text-shadow: 0 0 2px #f54405, 0 0 3px #f54405;
+    text-decoration: underline;
 }
+
 
 main {
     padding: 20px;

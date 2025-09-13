@@ -1,9 +1,9 @@
 body {
-    margin-top: 4em; padding: 5em; color: #ffffff; font-family: 'Anonymous Pro', monospace;background-color: #673ab7;
+    margin-top: 4em; padding: 5em; color: #ffffff; font-family: 'Anonymous Pro', monospace;background-color: #f54405;
 
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(89.7deg, rgb(70, 70, 70) 2.8%, rgb(220, 80, 30) 97.8%);
+    background: linear-gradient(89.7deg, rgb(40, 40, 40) 2.8%, rgb(173, 72, 0) 97.8%);
 
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -53,9 +53,12 @@ nav ul li {
 
 nav ul li a {
     color: #ffffff;
-    text-decoration: none;
-    text-shadow: 0 0 2px #fff5f7, 0 0 2px #fff5f7;
+    text-shadow: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 a {
     color: rgb(150, 50, 10);
@@ -68,14 +71,20 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
-
-nav ul li a:hover {
-    color: #9b59b6;
-    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
+.social-icon {
+  color: white !important;
+  transition: color 0.3s ease;
 }
 
+.social-icon:hover {
+  color: orange !important;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 2px #f54405, 0 0 3px #f54405;
+    text-decoration: underline;
+}
 main {
     padding: 20px;
     background: rgba(0, 0, 0, 0.3);
