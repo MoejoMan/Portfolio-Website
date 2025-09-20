@@ -11,13 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.PA_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
+      - name: Install PythonAnywhere CLI
+        run: pip install pythonanywhere
 
-      - name: Deploy on PythonAnywhere
+      - name: Deploy via API
+        env:
+          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no Moejoe06@ssh.pythonanywhere.com "cd ~/mysite && git pull"
+          echo "$PA_API_TOKEN" > ~/pa_token.json
+          pa --token-file ~/pa_token.json git pull -u Moejoe06
