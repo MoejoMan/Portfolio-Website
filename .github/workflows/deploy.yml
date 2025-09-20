@@ -16,7 +16,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.PA_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ssh.pythonanywhere.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
 
       - name: Deploy on PythonAnywhere
         run: |
