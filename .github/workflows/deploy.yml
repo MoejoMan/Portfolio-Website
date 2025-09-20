@@ -20,5 +20,5 @@ jobs:
           PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
           mkdir -p ~/.config/pythonanywhere
-          echo "$PA_API_TOKEN" > ~/.config/pythonanywhere/token.json
-          pa --token-file ~/.config/pythonanywhere/token.json run "cd ~/mysite && git pull"
+          echo "{\"token\": \"$PA_API_TOKEN\"}" > ~/.config/pythonanywhere/token.json
+          pa run "cd ~/mysite && git pull"
