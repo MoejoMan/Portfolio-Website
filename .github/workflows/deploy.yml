@@ -11,14 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.PA_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ssh.pythonanywhere.com >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
+      - name: Start SSH agent and add key
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.PA_SSH_KEY }}
+
+      - name: Add PythonAnywhere to known hosts
+        run: ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
 
       - name: Deploy on PythonAnywhere
-        run: |
-          ssh -i ~/.ssh/id_rsa Moejoe06@ssh.pythonanywhere.com "cd ~/mysite && git pull"
+        run: ssh -o StrictHostKeyChecking=no Moejoe06@ssh.pythonanywhere.com "cd ~/mysite && git pull"
