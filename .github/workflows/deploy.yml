@@ -18,6 +18,4 @@ jobs:
       - name: Deploy to PythonAnywhere
         env:
           PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
-        run: |
-          echo "Token set: $PA_API_TOKEN"
-          pa run "cd ~/mysite && git pull"
+        run: pa run "cd ~/mysite && git pull"
