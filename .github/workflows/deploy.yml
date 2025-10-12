@@ -16,13 +16,7 @@ jobs:
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
-          # Install CLI for current user
           python3 -m pip install --upgrade --force-reinstall pythonanywhere --user
-          
-          # Make the CLI executable available
-          export PATH=$HOME/.local/bin:$PATH
-          
-          # Run PythonAnywhere commands
-          pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
-          pythonanywhere run "cd ~/mysite && git pull"
-          pythonanywhere webapp reload Moejoe06.pythonanywhere.com
+          python3 -m pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
+          python3 -m pythonanywhere run "cd ~/mysite && git pull"
+          python3 -m pythonanywhere webapp reload Moejoe06.pythonanywhere.com
