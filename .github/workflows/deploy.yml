@@ -9,15 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up PythonAnywhere CLI
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install PythonAnywhere CLI
         run: |
           python3 -m pip install --upgrade --force-reinstall pythonanywhere --user
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Login and deploy
+      - name: Deploy to PythonAnywhere
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
