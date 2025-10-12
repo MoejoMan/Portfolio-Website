@@ -18,6 +18,7 @@ jobs:
       - name: Deploy to PythonAnywhere
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+          PATH: ${{ runner.home }}/.local/bin:${{ env.PATH }}
         run: |
           pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
           pythonanywhere run "cd ~/mysite && git pull"
