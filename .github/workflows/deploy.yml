@@ -9,18 +9,24 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Install PythonAnywhere CLI
         run: |
           python3 -m pip install --upgrade --force-reinstall pythonanywhere --user
+          echo "PATH before export: $PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          echo "PATH after export: $PATH"
+          which pythonanywhere
+          pythonanywhere --version
 
       - name: Deploy to PythonAnywhere
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
+          echo "Deploying to PythonAnywhere..."
+          pythonanywhere login --apikey "$PYTHONANYWHERE_API_TOKEN"
           pythonanywhere run "cd ~/mysite && git pull"
           pythonanywhere webapp reload Moejoe06.pythonanywhere.com
