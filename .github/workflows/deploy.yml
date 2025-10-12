@@ -15,6 +15,11 @@ jobs:
       - name: Install PythonAnywhere CLI
         run: pip install --upgrade pythonanywhere
 
+      - name: Patch pa.py for Python 3
+        run: |
+          PA_PATH=$(python -c "import pa; import os; print(os.path.dirname(pa.__file__))")
+          sed -i '1ifrom importlib import reload' "$PA_PATH/pa.py"
+          
       - name: Deploy to PythonAnywhere
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
