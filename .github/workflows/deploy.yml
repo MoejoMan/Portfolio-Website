@@ -20,4 +20,4 @@ jobs:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
           pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
-          pythonanywhere webapp reload yourusername.pythonanywhere.com
+          pythonanywhere webapp reload Moejoe06.pythonanywhere.com
