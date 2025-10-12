@@ -12,14 +12,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install PythonAnywhere CLI
+      - name: Set up PythonAnywhere CLI
         run: |
           python3 -m pip install --upgrade --force-reinstall pythonanywhere --user
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Deploy to PythonAnywhere
+      - name: Login and deploy
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
-          python3 -m pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
-          python3 -m pythonanywhere run "cd ~/mysite && git pull"
-          python3 -m pythonanywhere webapp reload Moejoe06.pythonanywhere.com
+          pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
+          pythonanywhere run "cd ~/mysite && git pull"
+          pythonanywhere webapp reload Moejoe06.pythonanywhere.com
