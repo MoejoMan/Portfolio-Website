@@ -8,7 +8,7 @@ Welcome to my personal portfolio website! This project showcases my work, skills
 - Uses **HTML/CSS** for frontend pages.  
 - Features:
   - `main_page.html` – homepage
-  - `about.html` – learn more about me
+  - `about.html` – learn more about me!
   - `projects.html` – my projects portfolio
   - `contact.html` – contact form
 
