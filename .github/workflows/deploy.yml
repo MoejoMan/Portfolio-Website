@@ -3,7 +3,7 @@ name: Deploy Flask app to PythonAnywhere
 on:
   push:
     branches:
-      - main  # or whichever branch you push from
+      - main
 
 jobs:
   deploy:
@@ -16,12 +16,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Match your PA Python version
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Zip project for PythonAnywhere
+        run: |
+          zip -r app.zip . -x ".git/*" ".github/*"
 
       - name: Deploy to PythonAnywhere
         env:
@@ -30,4 +34,4 @@ jobs:
         run: |
           curl -X POST "https://www.pythonanywhere.com/api/v0/user/$PA_USERNAME/files/path/home/$PA_USERNAME/mysite/" \
           -H "Authorization: Token $PA_API_TOKEN" \
-          -F "content=@./MoejoMan.zip"
+          -F "content=@app.zip"
