@@ -1,32 +1,33 @@
-name: Deploy Flask App to PythonAnywhere
+name: Deploy Flask app to PythonAnywhere
 
 on:
   push:
     branches:
-      - main   # Or whichever branch you want to auto-deploy
+      - main  # or whichever branch you push from
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.12
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Match your PA Python version
 
-    - name: Install PythonAnywhere CLI
-      run: |
-        python -m pip install --upgrade pip
-        pip install pythonanywhere
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Deploy to PythonAnywhere
-      env:
-        PA_USERNAME: ${{ secrets.PA_USERNAME }}
-        PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
-      run: |
-        # Configure Flask site (mysite is your PythonAnywhere web app name)
-        pa_autoconfigure_flask.py --python=3.12 $PA_USERNAME mysite
+      - name: Deploy to PythonAnywhere
+        env:
+          PA_USERNAME: ${{ secrets.PA_USERNAME }}
+          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+        run: |
+          curl -X POST "https://www.pythonanywhere.com/api/v0/user/$PA_USERNAME/files/path/home/$PA_USERNAME/mysite/" \
+          -H "Authorization: Token $PA_API_TOKEN" \
+          -F "content=@./MoejoMan.zip"
