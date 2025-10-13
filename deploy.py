@@ -21,7 +21,8 @@ def zip_project():
 
 print("🚀 Uploading project to PythonAnywhere...")
 
-files = {"file": ("project.zip", zip_project())}
+files = {"content": ("project.zip", zip_project())}
+
 upload_url = f"https://www.pythonanywhere.com/api/v0/user/{username}/files/path/home/{username}/mysite/project.zip"
 
 resp = requests.post(upload_url, headers={"Authorization": f"Token {api_token}"}, files=files)
