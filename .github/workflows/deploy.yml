@@ -1,16 +1,16 @@
-name: PythonAnywhere Deployment
+name: Deploy to PythonAnywhere
 
 on:
   push:
     branches:
-      - main
-      
+      - main  # Or your default branch
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -18,9 +18,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies and deploy
+      - name: Install dependencies
+        run: python3 -m pip install --upgrade pip requests
+
+      - name: Deploy to PythonAnywhere
+        run: python3 deploy.py
         env:
-          PYTHONANYWHERE_API_TOKEN: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}
-        run: |
-          python3 -m pip install requests
-          python3 deploy.py
+          PA_USERNAME: ${{ secrets.PA_USERNAME }}
+          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
