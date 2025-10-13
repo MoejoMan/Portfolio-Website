@@ -18,11 +18,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install PythonAnywhere CLI and deploy
+      - name: Install and deploy to PythonAnywhere
         env:
           PYTHONANYWHERE_API_TOKEN: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}
         run: |
-          python3 -m pip install --upgrade --force-reinstall pythonanywhere --user
-          export PATH="$HOME/.local/bin:$PATH"
-          pythonanywhere login --apikey $PYTHONANYWHERE_API_TOKEN
-          pythonanywhere run "cd ~/mysite && git pull"
+          python3 -m pip install --upgrade pythonanywhere
+          python3 -m pythonanywhere.scripts.login --apikey $PYTHONANYWHERE_API_TOKEN
+          python3 -m pythonanywhere.scripts.run "cd ~/mysite && git pull"
+          python3 -m pythonanywhere.scripts.webapp reload Moejoe06.pythonanywhere.com
