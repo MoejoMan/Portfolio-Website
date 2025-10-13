@@ -1,28 +1,32 @@
-name: Deploy to PythonAnywhere
+name: Deploy Flask App to PythonAnywhere
 
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main   # Or whichever branch you want to auto-deploy
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
 
-      - name: Install dependencies
-        run: python -m pip install --upgrade pip requests
+    - name: Install PythonAnywhere CLI
+      run: |
+        python -m pip install --upgrade pip
+        pip install pythonanywhere
 
-      - name: Deploy to PythonAnywhere
-        run: python deploy.py
-        env:
-          PA_USERNAME: ${{ secrets.PA_USERNAME }}
-          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+    - name: Deploy to PythonAnywhere
+      env:
+        PA_USERNAME: ${{ secrets.PA_USERNAME }}
+        PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+      run: |
+        # Configure Flask site (mysite is your PythonAnywhere web app name)
+        pa_autoconfigure_flask.py --python=3.12 $PA_USERNAME mysite
