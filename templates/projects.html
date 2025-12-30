@@ -27,27 +27,8 @@
     <main id="projectsPage">
         <h2>Project Showcase</h2>
         <p>Here are the projects I have done throughout my time at Sixth form all the way to the current day at University. Here is a quick link to my github however you can find my other profiles which contain more information on the "Contact Me" page. <br> Here is my github (will soon update to show all of my projects): <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">https://github.com/MoejoMan</a></p>
-    </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let startTime = localStorage.getItem('gradientStartTime');
-
-            if (!startTime) {
-                startTime = Date.now();
-                localStorage.setItem('gradientStartTime', startTime);
-            }
-
-            const elapsedTime = (Date.now() - startTime) / 1000;
-
-            const body = document.getElementById('animatedBody');
-            if (body) {
-                body.style.animationDelay = `-${elapsedTime % 15}s`;
-            }
-        });
-    </script>
-
-    <section class="project-grid">
+        <section class="project-grid">
         <div class="project-card">
             <img src="{{ url_for('static', filename='images/NEA.png') }}" alt="Project 1">
             <h3>Project 1</h3>
@@ -70,11 +51,10 @@
         </div>
 
         <div class="project-card">
-            <img src="{{ url_for('static', filename='images/Coming Soon.png') }}" alt="Project 4">
-            <div class="wip-overlay">WIP</div>
-            <h3>Project 4</h3>
-            <p>Work in Progress: Stay tuned for updates as this project evolves.</p>
-            <a href="#" class="project-link">Coming Soon</a>
+            <img src="{{ url_for('static', filename='images/ascii-art-text.png') }}" alt="Project 4">
+            <h3>Tripwire</h3>
+            <p>Production-ready SSH brute-force analyzer with real-time threat detection, CSV export, and fail2ban integration</p>
+            <a href="https://github.com/MoejoMan/Tripwire" target="_blank" class="project-link">View Project</a>
         </div>
 
         <div class="project-card">
@@ -85,8 +65,40 @@
 
         </div>
 
+        </section>
+    </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let startTime = localStorage.getItem('gradientStartTime');
 
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem('gradientStartTime', startTime);
+            }
+
+            const elapsedTime = (Date.now() - startTime) / 1000;
+
+            const body = document.getElementById('animatedBody');
+            if (body) {
+                body.style.animationDelay = `-${elapsedTime % 15}s`;
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                if (!card.innerHTML.trim()) {
+                    card.classList.add('empty');
+                } else {
+                    card.classList.remove('empty');
+                }
+            });
+        });
+    </script>
 
 
 <footer>
@@ -97,21 +109,6 @@
     <p>Thanks for Checking out my Portfolio!</p>
   </div>
 </footer>
-
-
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const projectCards = document.querySelectorAll('.project-card');
-
-            projectCards.forEach(card => {
-                if (!card.innerHTML.trim()) {
-                    card.classList.add('empty'); // Add 'empty' class if the card is empty
-                } else {
-                    card.classList.remove('empty'); // Remove 'empty' class if there's content
-                }
-            });
-        });
-    </script>
 
 
 </body>

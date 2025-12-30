@@ -1,7 +1,17 @@
+import os
+
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash
 
+# Load env files (local dev: .env or prtlnkps.env)
+load_dotenv()
+load_dotenv("prtlnkps.env")
+
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+secret_key = os.getenv("SECRET_KEY")
+if not secret_key:
+    raise RuntimeError("SECRET_KEY is not set; please configure your environment")
+app.secret_key = secret_key
 
 @app.route("/")
 def index():

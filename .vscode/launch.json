@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flask: flask_app.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/flask_app.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/prtlnkps.env",
+            "env": {
+                "FLASK_ENV": "development"
+            }
+        }
+    ]
+}

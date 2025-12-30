@@ -3,3 +3,11 @@
 __pycache__
 
 Control-D
+
+# Local environment files
+prtlnkps.env
+.env
+pa.env
+
+# Virtual environment
+.venv/

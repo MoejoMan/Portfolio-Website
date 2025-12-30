@@ -2,9 +2,22 @@ import os
 import requests
 import zipfile
 import io
+from dotenv import load_dotenv
 
-username = os.environ["PA_USERNAME"]
-api_token = os.environ["PA_API_TOKEN"]
+# Load local env files so we don't hardcode tokens; expects PA_USERNAME and PA_API_TOKEN to be set.
+load_dotenv()
+load_dotenv("pa.env")  # optional local file for PythonAnywhere creds; keep out of git
+
+
+def get_env(name: str) -> str:
+    value = os.getenv(name)
+    if not value:
+        raise RuntimeError(f"Missing required environment variable: {name}. Set it in your shell or pa.env before running deploy.")
+    return value
+
+
+username = get_env("PA_USERNAME")
+api_token = get_env("PA_API_TOKEN")
 webapp_name = "Moejoe06.pythonanywhere.com"
 
 # Zip your project folder
@@ -26,8 +39,8 @@ files = {"content": ("project.zip", zip_project())}
 upload_url = f"https://www.pythonanywhere.com/api/v0/user/{username}/files/path/home/{username}/mysite/project.zip"
 
 resp = requests.post(upload_url, headers={"Authorization": f"Token {api_token}"}, files=files)
-if resp.status_code == 201:
-    print("✅ Uploaded zip successfully!")
+if resp.status_code in (200, 201):
+    print("✅ Uploaded zip successfully!", resp.text)
 else:
     print(f"❌ Upload failed: {resp.status_code} {resp.text}")
     exit(1)
@@ -36,8 +49,8 @@ else:
 extract_url = f"https://www.pythonanywhere.com/api/v0/user/{username}/bash/path/home/{username}/mysite"
 extract_cmd = f"unzip -o project.zip -d . && rm project.zip"
 resp = requests.post(extract_url, headers={"Authorization": f"Token {api_token}"}, json={"command": extract_cmd})
-if resp.status_code == 200:
-    print("✅ Extracted project successfully!")
+if resp.status_code in (200, 201):
+    print("✅ Extracted project successfully!", resp.text)
 else:
     print(f"❌ Extract failed: {resp.status_code} {resp.text}")
     exit(1)
@@ -45,8 +58,8 @@ else:
 # Reload web app
 reload_url = f"https://www.pythonanywhere.com/api/v0/user/{username}/webapps/{webapp_name}/reload/"
 resp = requests.post(reload_url, headers={"Authorization": f"Token {api_token}"})
-if resp.status_code == 200:
-    print("✅ Web app reloaded successfully!")
+if resp.status_code in (200, 201):
+    print("✅ Web app reloaded successfully!", resp.text)
 else:
     print(f"❌ Reload failed: {resp.status_code} {resp.text}")
     exit(1)
