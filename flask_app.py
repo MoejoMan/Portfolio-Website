@@ -6,6 +6,10 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 # Load env files (local dev: .env or prtlnkps.env)
 load_dotenv()
 load_dotenv("prtlnkps.env")
+# Fallback for production (absolute path)
+import pathlib
+env_path = pathlib.Path(__file__).parent / "prtlnkps.env"
+load_dotenv(env_path)
 
 app = Flask(__name__)
 secret_key = os.getenv("SECRET_KEY")
