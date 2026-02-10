@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/hometext.css') }}">
-<script src="{{ url_for('static', filename='JavaScript/background.js') }}" defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Joseph Hayes Gonzalez — Cybersecurity student, tool builder, and homelab enthusiast based in Cambridge, UK.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hometext.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/static/images/Favicon.png" type="image/png">
-
-
-
-    <title>Homepage | Portfolio | Joseph Hayes Gonzalez</title>
+    <title>Joseph Hayes Gonzalez | Cybersecurity &amp; Software</title>
 </head>
 <body id="animatedBody">
+
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Joseph H.G.</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="active">Home</a></li>
                 <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About Me</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
 
-        <p class="cursor typewriter-animation desktop-text">
-            cursor.execute('SELECT * FROM portfolio WHERE id=1;')
+    <!-- ── Hero ────────────────────────────────────── -->
+    <section class="hero">
+        <div class="status-badge">Open to opportunities</div>
+
+        <h2>
+            Cybersecurity Student<br>
+            &amp; <span class="accent">Tool Builder</span>
+        </h2>
+
+        <p class="subtitle">
+            Building real security tools, not just coursework. ISC2 Certified in Cybersecurity, running a homelab, and shipping production code from Cambridge, UK.
         </p>
-        <p class="cursor typewriter-animation mobile-text">
-            SELECT * FROM portfolio;
-        </p>
 
-
-        <p>Welcome to My Portfolio! I'm Joseph Hayes Gonzalez, a Cybersecurity student in Cambridge. Here, you'll find a showcase of my notable achievements and projects that reflect my passion and dedication in the field.</p>
-    </main>
-
-    <div class="timeline">
-        <div class="container left-container">
-            <div class="text-box">
-                <small>04/2023 - 12/2023</small>
-                <h2>My First Program (NEA)</h2>
-                <p>This can be found on my Github! During sixth form I was tasked with making a program for my NEA and so i made a Point of Sales System using Python, SQL, and PyQt5.</p>
-            </div>
-            <div class="left-container-arrow"></div>
+        <div class="tagline">
+            <span class="cursor typewriter-animation desktop-text">$ ssh joseph@portfolio — access&nbsp;granted</span>
+            <span class="cursor typewriter-animation mobile-text">$ whoami — joseph</span>
         </div>
 
-        <div class="container right-container">
-            <div class="text-box">
-                <small>07/2023 - 05/2024</small>
-                <h2>Learned the Basics of Databases and Web Development</h2>
-                <p>I learned the basics of these topics during my A Level in ICT, having made a dummy website for a project.</p>
-            </div>
-            <div class="right-container-arrow"></div>
+        <div class="cta-row">
+            <a href="/projects" class="cta-button"><i class="fas fa-terminal"></i> View My Work</a>
+            <a href="https://www.linkedin.com/in/joseph-hayes-gonzalez-905495283" target="_blank" class="cta-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
+    </section>
 
-        <div class="container left-container">
-            <div class="text-box">
-                <small>06/2022 - 08/2024</small>
-                <h2>Finished My A Levels and Received My Results</h2>
-                <p>Recieved an unconditional offer into University with good grades.</p>
-            </div>
-            <div class="left-container-arrow"></div>
+    <!-- ── Highlights Strip ────────────────────────── -->
+    <section class="highlights-strip">
+        <div class="highlight-card">
+            <div class="number">250+</div>
+            <div class="label">GitHub Contributions</div>
         </div>
-
-        <div class="container right-container">
-            <div class="text-box">
-                <small>09/2024 - Present</small>
-                <h2>Started My Degree in Cybersecurity</h2>
-                <p>I hope to, after this degree, become a professional in Cybersecurity using the skills i have gained over my life</p>
-            </div>
-            <div class="right-container-arrow"></div>
+        <div class="highlight-card">
+            <div class="number">8+</div>
+            <div class="label">Public Projects</div>
         </div>
-
-        <div class="container left-container">
-            <div class="text-box">
-                <small>09/2024 - 10/2024</small>
-                <h2>Finished ISC2's Certified in Cybersecurity Training</h2>
-                <p>Focuses on foundational cybersecurity concepts and practices. I am excited to apply what I learned here to my career in Cybersecurity</p>
-            </div>
-            <div class="left-container-arrow"></div>
+        <div class="highlight-card">
+            <div class="number">ISC2</div>
+            <div class="label">CC Certified</div>
         </div>
-
-        <div class="container right-container">
-            <div class="text-box">
-                <small>11/2024 - 12/2025</small>
-                <h2>Built SSHVigil - My First Production Tool</h2>
-                <p>Created a production-ready SSH brute-force analyzer with real-time monitoring, threat classification, and automated blocklist generation. My first truly useful cybersecurity tool!</p>
-            </div>
-            <div class="right-container-arrow"></div>
+        <div class="highlight-card">
+            <div class="number"><i class="fas fa-server" style="font-size:1.6rem"></i></div>
+            <div class="label">Active Homelab</div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let startTime = localStorage.getItem('gradientStartTime');
+    <!-- ── Timeline ────────────────────────────────── -->
+    <section class="timeline-section">
+        <h2>My Journey</h2>
 
-            if (!startTime) {
-                startTime = Date.now();
-                localStorage.setItem('gradientStartTime', startTime);
-            }
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="tl-date">Apr 2023 — Dec 2023</div>
+                <div class="tl-card">
+                    <h3>Built My First Program (NEA)</h3>
+                    <p>Designed and developed a full Point-of-Sales system for my A-Level Non-Exam Assessment using Python, SQL, and PyQt5.</p>
+                </div>
+            </div>
 
-            const elapsedTime = (Date.now() - startTime) / 1000;
+            <div class="timeline-item">
+                <div class="tl-date">Jul 2023 — May 2024</div>
+                <div class="tl-card">
+                    <h3>Learned Databases &amp; Web Dev</h3>
+                    <p>Picked up the fundamentals of relational databases and web development during my ICT A-Level, building a functional coursework website.</p>
+                </div>
+            </div>
 
-            const body = document.getElementById('animatedBody');
-            if (body) {
-                body.style.animationDelay = `-${elapsedTime % 15}s`;
-            }
-        });
-    </script>
+            <div class="timeline-item">
+                <div class="tl-date">Aug 2024</div>
+                <div class="tl-card">
+                    <h3>Finished A-Levels</h3>
+                    <p>Achieved strong results and secured an unconditional university offer to study Cybersecurity.</p>
+                </div>
+            </div>
 
+            <div class="timeline-item">
+                <div class="tl-date">Sep 2024 — Present</div>
+                <div class="tl-card">
+                    <h3>Started Cybersecurity Degree</h3>
+                    <p>Studying Cybersecurity at university in Cambridge while building security tools and running a homelab on the side.</p>
+                </div>
+            </div>
 
-<footer>
-  <div class="left">
-    <p>Email: joehayes006@gmail.com</p>
-  </div>
-  <div class="center">
-    <p>Thanks for Checking out my Portfolio!</p>
-  </div>
-</footer>
+            <div class="timeline-item">
+                <div class="tl-date">Sep 2024 — Oct 2024</div>
+                <div class="tl-card">
+                    <h3>ISC2 Certified in Cybersecurity</h3>
+                    <p>Completed ISC2's CC training covering foundational security concepts, risk management, access controls, and incident response.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="tl-date">Nov 2024 — Dec 2025</div>
+                <div class="tl-card">
+                    <h3>Built SSHVigil — Production Security Tool</h3>
+                    <p>Created a production-ready SSH brute-force analyzer with real-time threat detection, severity classification, and automated fail2ban blocklist generation. Zero external dependencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="left">
+            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
+        </div>
+        <div class="center">
+            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
+        </div>
+    </footer>
 
 </body>
 </html>

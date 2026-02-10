@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
-<script src="{{ url_for('static', filename='JavaScript/background.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js" crossorigin="anonymous"></script>
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About Joseph Hayes Gonzalez — cybersecurity student, skills, tools, and certifications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/static/images/Favicon.png" type="image/png">
-
-    <title>About Me | Portfolio | Joseph Hayes Gonzalez</title>
+    <title>About | Joseph Hayes Gonzalez</title>
 </head>
-
 <body id="animatedBody">
+
     <header>
-        <h1>About Me</h1>
+        <h1>Joseph H.G.</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About Me</a></li>
+                <li><a href="/about" class="active">About</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-<section class="intro-section">
-    <h2>About Me</h2>
-    <p>
-        My name is Joseph Hayes Gonzalez. Computers have always fascinated me, and somewhere along the way that curiosity turned into a love for cybersecurity. I’m on the blue team side of things motsly, figuring out how to keep systems safe, exploring programming, and spreading awareness about safe internet habits to anyone who will listen.
-    </p>
-    <p>
-        I like getting stuck in with projects. From turning a Raspberry Pi Pico into a Rubber Ducky, to building my Smart CV Analyzer for uni, along with countless other coding projects, to diving into TryHackMe challenges — I learn by doing, experimenting, and sometimes just seeing how far I can push things.
-    </p>
-    <p>
-        When I’m not fiddling with code or security labs, I’m gaming, thinking about tech, or planning my next project. Down the line, I want to work somewhere I can really make an impact, whether that’s a company, an organization, or for the government, keeping the digital world a little safer along the way.
-    </p>
-</section>
 
+        <!-- ── About Me ───────────────────────────── -->
+        <section class="intro-section fade-in">
+            <h2>About Me</h2>
+            <p>
+                My name is Joseph Hayes Gonzalez. Computers have always fascinated me, and somewhere along the way that curiosity turned into a passion for cybersecurity. I sit on the blue team side of things mostly — figuring out how to keep systems safe, building practical tools, and spreading awareness about safe internet practices.
+            </p>
+            <p>
+                I learn by doing. From turning a Raspberry Pi Pico into a USB Rubber Ducky, to building an SSH brute-force analyzer, to running my own WireGuard VPN and SIEM on cloud infrastructure — I'm always looking for the next thing to build or break (responsibly). I run a homelab out of my uni dorm with Cisco switches, a refurbished Dell OptiPlex server, and cloud VPS instances.
+            </p>
+            <p>
+                Down the line, I want to work somewhere I can make a real impact — whether that's in a SOC, a security consultancy, or a role where I'm defending critical infrastructure. I'm eager to get hands-on industry experience.
+            </p>
 
+            <div class="cert-badge">
+                <i class="fas fa-shield-halved"></i>
+                ISC2 Certified in Cybersecurity (CC)
+            </div>
+        </section>
 
-        <section class="skills-section">
-            <h2>Languages I Work With</h2>
+        <!-- ── Languages ──────────────────────────── -->
+        <section class="skills-section fade-in">
+            <h2>Languages</h2>
             <div class="icon-grid">
                 <div><i class="fab fa-python"></i><p>Python</p></div>
+                <div><i class="fas fa-terminal"></i><p>PowerShell</p></div>
                 <div><i class="fab fa-html5"></i><p>HTML</p></div>
                 <div><i class="fab fa-css3-alt"></i><p>CSS</p></div>
                 <div><i class="fas fa-database"></i><p>SQL</p></div>
-                <div><i class="fas fa-coffee"></i><p>Java</p></div>
+                <div><i class="fab fa-java"></i><p>Java</p></div>
+                <div><i class="fab fa-linux"></i><p>Bash</p></div>
             </div>
         </section>
+
+        <!-- ── Tools & Platforms ──────────────────── -->
+        <section class="skills-section fade-in">
+            <h2>Tools &amp; Platforms</h2>
+            <div class="tools-grid">
+                <div class="tool-item"><i class="fab fa-linux"></i> Linux / Ubuntu</div>
+                <div class="tool-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tool-item"><i class="fas fa-shield-halved"></i> WireGuard VPN</div>
+                <div class="tool-item"><i class="fas fa-chart-line"></i> SIEM</div>
+                <div class="tool-item"><i class="fab fa-git-alt"></i> Git / GitHub</div>
+                <div class="tool-item"><i class="fas fa-network-wired"></i> Cisco Networking</div>
+                <div class="tool-item"><i class="fas fa-cloud"></i> Oracle Cloud / Hetzner</div>
+                <div class="tool-item"><i class="fab fa-python"></i> Flask</div>
+                <div class="tool-item"><i class="fas fa-ban"></i> fail2ban</div>
+                <div class="tool-item"><i class="fas fa-bug"></i> TryHackMe</div>
+                <div class="tool-item"><i class="fas fa-microscope"></i> FTK Imager</div>
+                <div class="tool-item"><i class="fas fa-gears"></i> GitHub Actions CI/CD</div>
+            </div>
+        </section>
+
+        <!-- ── Homelab ────────────────────────────── -->
+        <section class="section-card fade-in">
+            <h2><i class="fas fa-server" style="color:#ff6b35; margin-right:10px;"></i>Homelab</h2>
+            <p style="margin-bottom: 16px;">Hands-on infrastructure running from my uni accommodation and cloud providers:</p>
+            <div class="tools-grid">
+                <div class="tool-item"><i class="fas fa-network-wired"></i> 2x Cisco 2960 Switches</div>
+                <div class="tool-item"><i class="fas fa-desktop"></i> Dell OptiPlex Server</div>
+                <div class="tool-item"><i class="fas fa-microchip"></i> Raspberry Pi Pico</div>
+                <div class="tool-item"><i class="fas fa-cloud"></i> Oracle Cloud VPS</div>
+                <div class="tool-item"><i class="fas fa-lock"></i> Hetzner SIEM + VPN</div>
+                <div class="tool-item"><i class="fas fa-cube"></i> Docker Containers</div>
+            </div>
+        </section>
+
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let startTime = localStorage.getItem('gradientStartTime');
-
-            if (!startTime) {
-                startTime = Date.now();
-                localStorage.setItem('gradientStartTime', startTime);
-            }
-
-            const elapsedTime = (Date.now() - startTime) / 1000;
-
-            const body = document.getElementById('animatedBody');
-            if (body) {
-                body.style.animationDelay = `-${elapsedTime % 15}s`;
-            }
-        });
-    </script>
-
-  <script>
-    window.onload = function () {
-      window.scrollTo(0, 0);
-      setTimeout(() => {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth',
-        });
-      }, 600);
-    };
-  </script>
-
-
-<footer>
-  <div class="left">
-    <p>Email: joehayes006@gmail.com</p>
-  </div>
-  <div class="center">
-    <p>Thanks for Checking out my Portfolio!</p>
-  </div>
-</footer>
+    <footer>
+        <div class="left">
+            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
+        </div>
+        <div class="center">
+            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
