@@ -1,7 +1,7 @@
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template
 
 # Load env files (local dev: .env or prtlnkps.env)
 load_dotenv()
@@ -29,16 +29,12 @@ def projects():
 def about():
     return render_template("about.html")
 
-@app.route("/contact", methods=["GET", "POST"])
+@app.route("/case-study/cambridge-fibre")
+def case_study_cambridge_fibre():
+    return render_template("case_study.html")
+
+@app.route("/contact")
 def contact():
-    if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        message = request.form["message"]
-        flash("Your message has been sent successfully!", "success")
-
-        return redirect(url_for("contact"))
-
     return render_template("contact.html")
 
 if __name__ == "__main__":

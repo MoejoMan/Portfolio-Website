@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Case study: rebuilding an Odoo backend and building a live broadband ordering platform for Cambridge Fibre Networks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/static/images/Favicon.png" type="image/png">
+    <title>Cambridge Fibre Ordering Platform | Case Study</title>
+</head>
+<body id="animatedBody">
+
+    <header>
+        <h1>Joseph H.G.</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects" class="active">Projects</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="intro-section fade-in">
+            <h2>Cambridge Fibre Ordering Platform</h2>
+            <p>
+                In 2026 I worked as a DevOps Engineer at Netservers on projects for Cambridge Fibre Networks, a full fibre broadband provider in Cambridge. I rebuilt the Odoo backend and, together with the CEO, built the customer website and ordering flow on top of it.
+            </p>
+            <p>
+                The code is private, so this page describes the design only. Commercial details such as internal thresholds, partner interfaces, and customer data are left out on purpose.
+            </p>
+        </section>
+
+        <section class="section-card fade-in">
+            <h2>What I built</h2>
+            <ul>
+                <li><strong>Odoo backend rebuild.</strong> Reorganised the custom Python modules and cleared bugs caused by outdated Python and XML. Over 200 merge requests.</li>
+                <li><strong>Address and serviceability engine.</strong> A customer enters a postcode and picks an address. The system matches it to its UPRN, decides whether it can be served from its distance to the existing network, and returns the plans available from the company's own network or from a wholesale partner.</li>
+                <li><strong>Live plan data.</strong> Odoo sends plans to the website through FastAPI, with Redis and RabbitMQ in the messaging layer. Prices, promo codes, yearly cost, and add ons such as mesh nodes update as soon as the data changes in Odoo.</li>
+                <li><strong>Installation scheduling.</strong> With the CEO, an automated scheduler that publishes engineer availability to the website so customers book their own install slot.</li>
+                <li><strong>Order pipeline.</strong> A Stripe deposit, a web order created in Odoo, and an engineer scheduled automatically. For partner addresses, the order is placed with the partner as well.</li>
+                <li><strong>One Touch Switching.</strong> A working integration between Odoo and the switching hub, built and tested but not released before I left.</li>
+                <li><strong>Customer website.</strong> Built with the CEO in Next.js, React, and TypeScript, with Payload CMS for content and Cloudflare Turnstile on forms.</li>
+                <li><strong>Local environment.</strong> A Docker replica of the website and backend so changes could be developed and tested safely on a laptop.</li>
+            </ul>
+        </section>
+
+        <section class="section-card fade-in">
+            <h2>The customer journey</h2>
+            <ol>
+                <li>Enter a postcode.</li>
+                <li>Pick an address from the list.</li>
+                <li>See the plans available for that address, with live pricing.</li>
+                <li>Add promo codes and extras.</li>
+                <li>Choose an installation slot from real engineer availability.</li>
+                <li>Pay the deposit through Stripe.</li>
+                <li>The order lands in Odoo and an engineer is booked.</li>
+            </ol>
+        </section>
+
+        <section class="section-card fade-in">
+            <h2>How I worked</h2>
+            <p>
+                Every change went through a merge request that the CEO reviewed by hand, was merged into a dev testing version first, and reached production only through him. There was no automated CI pipeline. If I were continuing the project, the first thing I would add is automated tests and CI around the serviceability and pricing rules, since they matter most.
+            </p>
+            <div class="tech-tags" style="margin-top: 16px;">
+                <span class="tech-tag python">Python</span>
+                <span class="tech-tag">Odoo</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">RabbitMQ</span>
+                <span class="tech-tag">Stripe</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Payload CMS</span>
+                <span class="tech-tag">Docker</span>
+            </div>
+        </section>
+
+        <p style="text-align:center;"><a href="/projects" class="project-link">Back to projects</a></p>
+
+    </main>
+
+    <footer>
+        <div class="left">
+            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
+        </div>
+        <div class="center">
+            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

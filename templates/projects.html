@@ -28,9 +28,39 @@
 
     <main id="projectsPage">
         <h2 style="text-align:center;">Project Showcase</h2>
-        <p>Cybersecurity tools, security automation, and full-stack web apps — built to solve real problems. All source code is on <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">GitHub</a>.</p>
+        <p>Cybersecurity tools, security automation, and full stack web apps, built to solve real problems. Open source projects are on <a href="https://github.com/MoejoMan?tab=repositories" target="_blank">GitHub</a>, and commercial work is described in case studies.</p>
 
         <section class="project-grid">
+
+            <!-- Cambridge Fibre (private code, case study) -->
+            <div class="project-card fade-in">
+                <span class="featured-badge">Featured</span>
+                <span class="project-icon">🌐</span>
+                <h3>Cambridge Fibre Ordering Platform</h3>
+                <p>Rebuilt an Odoo backend and built a live broadband ordering platform with the CEO: address and serviceability checks, live plan pricing, Stripe deposits, and automated engineer booking. Private code, so this is a design level case study.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag python">Python</span>
+                    <span class="tech-tag">Odoo</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                </div>
+                <a href="/case-study/cambridge-fibre" class="project-link">Read the case study</a>
+            </div>
+
+            <!-- Honeypot and SIEM -->
+            <div class="project-card fade-in">
+                <span class="featured-badge">Featured</span>
+                <span class="project-icon">🍯</span>
+                <h3>Honeypot and SIEM Homelab</h3>
+                <p>A Cowrie SSH honeypot on a Hetzner VPS feeding an ELK stack. It records thousands of login attempts a day, including the usernames and passwords tried, the most common source IPs, and how many get banned. The same server runs a self hosted WireGuard VPN.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag security">Security</span>
+                    <span class="tech-tag">Cowrie</span>
+                    <span class="tech-tag">ELK</span>
+                    <span class="tech-tag">WireGuard</span>
+                </div>
+            </div>
 
             <!-- SSHVigil -->
             <div class="project-card fade-in">
@@ -38,7 +68,7 @@
                 <span class="stars"><i class="fas fa-star"></i> 3</span>
                 <span class="project-icon">🛡️</span>
                 <h3>SSHVigil Cybersecurity Suite</h3>
-                <p>Production-ready SSH brute-force analyzer. Parses auth logs in real time, classifies threat severity, and auto-generates blocklists for fail2ban — zero external dependencies.</p>
+                <p>SSH brute force analyser. Tails authentication logs live, classifies threat severity, and generates fail2ban blocklists. It has 84 tests, installs as a systemd service, and needs no external dependencies.</p>
                 <div class="tech-tags">
                     <span class="tech-tag python">Python</span>
                     <span class="tech-tag security">Security</span>
@@ -67,7 +97,7 @@
                 <span class="featured-badge">Featured</span>
                 <span class="project-icon">🔍</span>
                 <h3>PowerShell Forensics Scripts</h3>
-                <p>Digital forensics toolkit for extracting artefacts from target machines. Designed to integrate with FTK Imager and built for real DFIR workflows.</p>
+                <p>Live forensic collection toolkit built for a university digital forensics module. Over 55 functions run in order of volatility, following ACPO principles and ISO 27037, and were used on a live virtual machine to capture RAM, registry, event logs, and browser artefacts.</p>
                 <div class="tech-tags">
                     <span class="tech-tag powershell">PowerShell</span>
                     <span class="tech-tag security">DFIR</span>
@@ -122,7 +152,7 @@
                 <span class="stars"><i class="fas fa-star"></i> 3</span>
                 <span class="project-icon">🔒</span>
                 <h3>Windows Auto Sentinel</h3>
-                <p>Windows security scanner that detects persistence mechanisms and suspicious autoruns. Features a GUI for easy analysis of startup entries and scheduled tasks.</p>
+                <p>Windows security scanner covering 17 categories of persistence and misconfiguration, such as scheduled tasks, run keys, WMI persistence, and Defender exclusions. It scores risk from 0 to 100 and serves its own browser dashboard from PowerShell.</p>
                 <div class="tech-tags">
                     <span class="tech-tag powershell">PowerShell</span>
                     <span class="tech-tag html">HTML</span>
@@ -136,7 +166,7 @@
             <div class="project-card fade-in">
                 <span class="project-icon">🐍</span>
                 <h3>Raspberry Pi Pico Bad USB</h3>
-                <p>Custom USB Rubber Ducky payloads for a Raspberry Pi Pico. A hands-on hardware security project exploring HID attack vectors for educational purposes.</p>
+                <p>A Raspberry Pi Pico set up as a USB HID device to learn how keystroke injection attacks work and how to defend against them. An educational hardware security project.</p>
                 <div class="tech-tags">
                     <span class="tech-tag python">Python</span>
                     <span class="tech-tag security">Security</span>
