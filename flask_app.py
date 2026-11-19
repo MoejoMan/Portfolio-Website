@@ -1,7 +1,9 @@
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, render_template
+from flask import Flask, abort, render_template
+
+import blog
 
 # Load env files (local dev: .env or prtlnkps.env)
 load_dotenv()
@@ -36,6 +38,18 @@ def case_study_cambridge_fibre():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/blog")
+def blog_index():
+    return render_template("blog_index.html", posts=blog.load_posts())
+
+@app.route("/blog/<slug>")
+def blog_post(slug):
+    post = blog.get_post(slug)
+    if post is None:
+        abort(404)
+    body, toc = blog.render_body(post)
+    return render_template("blog_post.html", post=post, body=body, toc=toc)
 
 if __name__ == "__main__":
     app.run(debug=True)

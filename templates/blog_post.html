@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% set active_page = 'blog' %}
+
+{% block title %}{{ post.title }} | Joseph Hayes Gonzalez{% endblock %}
+{% block description %}{{ post.summary }}{% endblock %}
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">{% endblock %}
+
+{% block content %}
+    <main id="blogPage">
+        <article class="post fade-in">
+            <div class="post-header">
+                {% if post.draft %}<span class="draft-badge">Draft, not published</span>{% endif %}
+                <h2>{{ post.title }}</h2>
+                {% if post.date_display %}<div class="post-meta">{{ post.date_display }}</div>{% endif %}
+                {% if post.tags %}
+                <div class="tech-tags">
+                    {% for tag in post.tags %}<span class="tech-tag">{{ tag }}</span>{% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="post-body">
+                {{ body|safe }}
+            </div>
+        </article>
+
+        <p style="text-align:center;"><a href="/blog" class="project-link">Back to the blog</a></p>
+    </main>
+{% endblock %}
