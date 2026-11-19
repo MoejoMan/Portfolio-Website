@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Contact Joseph Hayes Gonzalez. Open to part time and graduate cybersecurity roles.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="/static/images/Favicon.png" type="image/png">
-    <title>Contact | Joseph Hayes Gonzalez</title>
-</head>
-<body id="animatedBody">
+{% extends "base.html" %}
+{% set active_page = 'contact' %}
 
-    <header>
-        <h1>Joseph H.G.</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+{% block title %}Contact | Joseph Hayes Gonzalez{% endblock %}
+{% block description %}Contact Joseph Hayes Gonzalez. Open to part time and graduate cybersecurity roles.{% endblock %}
 
+{% block content %}
     <main class="maincontact">
 
         <section class="section-card fade-in" style="text-align:center; max-width:640px; margin: 0 auto 32px;">
@@ -60,15 +39,4 @@
         </div>
 
     </main>
-
-    <footer>
-        <div class="left">
-            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
-        </div>
-        <div class="center">
-            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{% endblock %}

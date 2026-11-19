@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}Joseph Hayes Gonzalez: cybersecurity and digital forensics student, tool builder, and homelab enthusiast based in Cambridge, UK.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% block stylesheet %}<link rel="stylesheet" href="{{ url_for('static', filename='css/mainstylesheet.css') }}">{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/static/images/Favicon.png" type="image/png">
+    <title>{% block title %}Joseph Hayes Gonzalez{% endblock %}</title>
+{%- block head_extra %}{% endblock %}
+</head>
+<body id="animatedBody">
+
+    <header>
+        <h1>Joseph H.G.</h1>
+        <nav>
+            <ul>
+                <li><a href="/"{% if active_page|default('') == 'home' %} class="active"{% endif %}>Home</a></li>
+                <li><a href="/projects"{% if active_page|default('') == 'projects' %} class="active"{% endif %}>Projects</a></li>
+                <li><a href="/about"{% if active_page|default('') == 'about' %} class="active"{% endif %}>About</a></li>
+                <li><a href="/contact"{% if active_page|default('') == 'contact' %} class="active"{% endif %}>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+{% block content %}{% endblock %}
+    <footer>
+        <div class="left">
+            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
+        </div>
+        <div class="center">
+            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

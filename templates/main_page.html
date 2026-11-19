@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Joseph Hayes Gonzalez: cybersecurity student, tool builder, and homelab enthusiast based in Cambridge, UK.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/hometext.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="/static/images/Favicon.png" type="image/png">
-    <title>Joseph Hayes Gonzalez | Cybersecurity &amp; Software</title>
-</head>
-<body id="animatedBody">
+{% extends "base.html" %}
+{% set active_page = 'home' %}
 
-    <header>
-        <h1>Joseph H.G.</h1>
-        <nav>
-            <ul>
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+{% block title %}Joseph Hayes Gonzalez | Cybersecurity &amp; Software{% endblock %}
+{% block description %}Joseph Hayes Gonzalez: cybersecurity student, tool builder, and homelab enthusiast based in Cambridge, UK.{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="{{ url_for('static', filename='css/hometext.css') }}">{% endblock %}
 
+{% block content %}
     <!-- ── Hero ────────────────────────────────────── -->
     <section class="hero">
         <div class="status-badge">Open to opportunities</div>
@@ -140,15 +120,4 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="left">
-            <p><a href="mailto:joehayes006@gmail.com">joehayes006@gmail.com</a></p>
-        </div>
-        <div class="center">
-            <p><a href="https://github.com/MoejoMan" target="_blank"><i class="fab fa-github"></i></a></p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{% endblock %}
